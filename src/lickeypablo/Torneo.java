@@ -1,12 +1,15 @@
 package lickeypablo;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class Torneo {
 
 	private String nombreDelTorneo;
 	private  Set<Integrante>integrantesDelTorneo=new HashSet<Integrante>();
+	private Map<String,Partido>partidos=new HashMap<String,Partido>();
 
 	public Torneo(String nombreDelTorneo) {
 		 this.nombreDelTorneo=nombreDelTorneo;
@@ -18,6 +21,10 @@ public class Torneo {
 
 	public Integer cantidadDeIntegrantes() {
 		return this.integrantesDelTorneo.size();
+	}
+
+	public void agregarPartido(Partido partido) {
+		partidos.put(partido.getIdDelPartido(),partido);
 	}
 
 }
