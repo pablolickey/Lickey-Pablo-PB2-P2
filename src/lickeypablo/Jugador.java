@@ -7,9 +7,8 @@ public class Jugador extends Integrante implements Juega{
 	private String posicion;
 
 	public Jugador(String NyA, String DNI, String equipo, String posicion) {
-		super(NyA);
+		super(NyA, equipo);
 		this.DNI=DNI;
-		this.equipo=equipo;
 		this.posicion=posicion;
 	}
 
