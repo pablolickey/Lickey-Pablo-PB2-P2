@@ -18,12 +18,18 @@ public class Partido {
 		this.nombreVisitante=visitante;
 	}
 
-	public void agregarJugadorLocal(Integrante jugador) {
+	public void agregarJugadorLocal(Integrante jugador) throws NoEsJugador {
 		if(jugador instanceof Jugador)this.local.add(jugador);
+		else {
+			throw new NoEsJugador();
+		}
 	}
 
-	public void agregarJugadorVisitante(Integrante jugador) {
-		if(jugador instanceof Jugador)this.local.add(jugador);
+	public void agregarJugadorVisitante(Integrante jugador) throws NoEsJugador {
+		if(jugador instanceof Jugador)this.visitante.add(jugador);
+		else {
+			throw new NoEsJugador();
+		}
 	}
 
 	public Integer cantidadDeJugadoresLocal() {

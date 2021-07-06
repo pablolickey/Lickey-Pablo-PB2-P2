@@ -35,8 +35,8 @@ public class TestCases {
 		
 	}
 	
-	@Test
-	public void registrarPartidosAlTorneo() {
+	@Test(expected= NoEsJugador.class)
+	public void registrarPartidosAlTorneo() throws NoEsJugador{
 		String nombreDelTorneo="copaAmerica";
 		Torneo torneo= new Torneo(nombreDelTorneo);
 		
@@ -61,6 +61,12 @@ public class TestCases {
 		torneo.agregarIntegrante(jugador2);
 		ArgentinaVsColombia.agregarJugadorLocal(jugador2);
 		
+		String NyA5="Lionel Scaloni";
+		Integer edad=45;
+		Integrante dt=new DT(NyA5,edad,equipo1);
+		torneo.agregarIntegrante(dt);
+		ArgentinaVsColombia.agregarJugadorLocal(dt);
+		
 		String NyA3="José María Giménez ";
 		String DNI3="42.147.235";
 		String posicion3="DEF";
@@ -83,6 +89,7 @@ public class TestCases {
 		assertEquals((Integer)4,torneo.cantidadDeIntegrantes());
 		assertEquals((Integer)2,ArgentinaVsColombia.cantidadDeJugadoresLocal());
 		assertEquals((Integer)2,ArgentinaVsColombia.cantidadDeJugadoresVisitante());
+		assertEquals((Integer)1, torneo.cantidadDePartidos());
 	}
 
 }

@@ -27,4 +27,8 @@ public class Torneo {
 		partidos.put(partido.getIdDelPartido(),partido);
 	}
 
+	public Integer cantidadDePartidos() {
+		return partidos.size();
+	}
+
 }
