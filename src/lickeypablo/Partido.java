@@ -10,7 +10,8 @@ public class Partido {
 	private  Set<Integrante>visitante=new HashSet();	
 	private String nombreLocal;
 	private String nombreVisitante;
-	private Integer goles;
+	private Integer golesLocal=0;
+	private Integer golesVisitante=0;
 	
 	public Partido(String idDelPartido, String local, String visitante) {
 		this.setIdDelPartido(idDelPartido);
@@ -47,6 +48,7 @@ public class Partido {
 	public void setIdDelPartido(String idDelPartido) {
 		this.idDelPartido = idDelPartido;
 	}
+
 
 }
 
