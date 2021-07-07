@@ -147,7 +147,7 @@ public class TestCases {
 		Double min3=48.0;
 		Gol tercerGol= new Gol(jugador1,min3,idDelPartido);
 		ArgentinaVsColombia.agregarGolLocal();
-		torneo.agregarGol(primerGol,ArgentinaVsColombia,jugador1);
+		torneo.agregarGol(tercerGol,ArgentinaVsColombia,jugador1);
 		
 		torneo.agregarPartido(ArgentinaVsColombia);
 		
