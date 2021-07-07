@@ -141,10 +141,15 @@ public class TestCases {
 		ArgentinaVsColombia.agregarJugadorVisitante(jugador4);
 		
 		Double min=31.1;
-		Gol primerGol= new Gol(jugador1,min);
-		
+		Gol primerGol= new Gol(jugador1,min,idDelPartido);
 		ArgentinaVsColombia.agregarGolLocal();
+		torneo.agregarGol(primerGol);
+		
+		Double min2=45.2;
+		Gol segundoGol= new Gol(jugador4,min2, idDelPartido);
 		ArgentinaVsColombia.agregarGolVisitante();
+		torneo.agregarGol(segundoGol);
+		
 		
 		torneo.agregarPartido(ArgentinaVsColombia);
 		

@@ -11,8 +11,8 @@ public class Partido {
 	private  Set<Integrante>visitante=new HashSet();	
 	private String nombreLocal;
 	private String nombreVisitante;
-	private ArrayList<Gol>golesLocales=new ArrayList<Gol>();
-	private ArrayList<Gol>golesVisitantes=new ArrayList<Gol>();
+	private Integer golLocal;
+	private Integer golVisitante;
 	
 	public Partido(String idDelPartido, String local, String visitante) {
 		this.setIdDelPartido(idDelPartido);
@@ -48,6 +48,14 @@ public class Partido {
 
 	public void setIdDelPartido(String idDelPartido) {
 		this.idDelPartido = idDelPartido;
+	}
+
+	public void agregarGolLocal() {
+		this.golLocal++;
+	}
+
+	public void agregarGolVisitante() {
+		this.golVisitante++;
 	}
 
 
