@@ -11,8 +11,8 @@ public class Partido {
 	private  Set<Integrante>visitante=new HashSet();	
 	private String nombreLocal;
 	private String nombreVisitante;
-	private Integer golLocal;
-	private Integer golVisitante;
+	private Integer golLocal=0;
+	private Integer golVisitante=0;
 	
 	public Partido(String idDelPartido, String local, String visitante) {
 		this.setIdDelPartido(idDelPartido);
@@ -56,6 +56,14 @@ public class Partido {
 
 	public void agregarGolVisitante() {
 		this.golVisitante++;
+	}
+
+	public String resultado() {
+		if(this.golLocal>this.golVisitante)return "Gano Local";
+		if(this.golLocal<this.golVisitante)return "Gano Visitante";
+		else{
+			return "Empate";
+		}
 	}
 
 

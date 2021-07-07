@@ -33,8 +33,13 @@ public class Torneo {
 		return partidos.size();
 	}
 
-	public void agregarGol(Gol gol){
-		this.goles.add(gol);
+	public void agregarGol(Gol gol, Partido partido, Integrante jugador) throws JugadorNoEncontradoException{
+		if(partido.getIdDelPartido() != null && jugador.getNyA()!= null) {			
+			this.goles.add(gol);
+		}
+		else {
+			throw new JugadorNoEncontradoException(); 
+		}
 	}
 
 }

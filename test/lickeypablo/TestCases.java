@@ -93,7 +93,7 @@ public class TestCases {
 	}
 	
 	@Test 
-	public void queInformeQuienGano() throws NoEsJugador {
+	public void queInformeQuienGano() throws NoEsJugador, JugadorNoEncontradoException {
 		String nombreDelTorneo="copaAmerica";
 		Torneo torneo= new Torneo(nombreDelTorneo);
 		
@@ -118,12 +118,6 @@ public class TestCases {
 		torneo.agregarIntegrante(jugador2);
 		ArgentinaVsColombia.agregarJugadorLocal(jugador2);
 		
-		String NyA5="Lionel Scaloni";
-		Integer edad=45;
-		Integrante dt=new DT(NyA5,edad,equipo1);
-		torneo.agregarIntegrante(dt);
-		ArgentinaVsColombia.agregarJugadorLocal(dt);
-		
 		String NyA3="José María Giménez ";
 		String DNI3="42.147.235";
 		String posicion3="DEF";
@@ -143,15 +137,21 @@ public class TestCases {
 		Double min=31.1;
 		Gol primerGol= new Gol(jugador1,min,idDelPartido);
 		ArgentinaVsColombia.agregarGolLocal();
-		torneo.agregarGol(primerGol);
+		torneo.agregarGol(primerGol,ArgentinaVsColombia,jugador1);
 		
 		Double min2=45.2;
 		Gol segundoGol= new Gol(jugador4,min2, idDelPartido);
 		ArgentinaVsColombia.agregarGolVisitante();
-		torneo.agregarGol(segundoGol);
+		torneo.agregarGol(segundoGol, ArgentinaVsColombia, jugador4);
 		
+		Double min3=48.0;
+		Gol tercerGol= new Gol(jugador1,min3,idDelPartido);
+		ArgentinaVsColombia.agregarGolLocal();
+		torneo.agregarGol(primerGol,ArgentinaVsColombia,jugador1);
 		
 		torneo.agregarPartido(ArgentinaVsColombia);
+		
+		assertEquals("Gano Local",ArgentinaVsColombia.resultado());
 		
 	}
 

@@ -6,8 +6,18 @@ public class Integrante {
 	
 
 	public Integrante(String NyA, String equipo) {
-		this.NyA=NyA;
+		this.setNyA(NyA);
 		this.equipo=equipo;
+	}
+
+
+	public String getNyA() {
+		return NyA;
+	}
+
+
+	public void setNyA(String nyA) {
+		NyA = nyA;
 	}
 	
 }
