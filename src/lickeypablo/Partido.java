@@ -1,5 +1,6 @@
 package lickeypablo;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -10,8 +11,8 @@ public class Partido {
 	private  Set<Integrante>visitante=new HashSet();	
 	private String nombreLocal;
 	private String nombreVisitante;
-	private Integer golesLocal=0;
-	private Integer golesVisitante=0;
+	private ArrayList<Gol>golesLocales=new ArrayList<Gol>();
+	private ArrayList<Gol>golesVisitantes=new ArrayList<Gol>();
 	
 	public Partido(String idDelPartido, String local, String visitante) {
 		this.setIdDelPartido(idDelPartido);

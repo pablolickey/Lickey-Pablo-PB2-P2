@@ -140,6 +140,9 @@ public class TestCases {
 		torneo.agregarIntegrante(jugador4);
 		ArgentinaVsColombia.agregarJugadorVisitante(jugador4);
 		
+		Double min=31.1;
+		Gol primerGol= new Gol(jugador1,min);
+		
 		ArgentinaVsColombia.agregarGolLocal();
 		ArgentinaVsColombia.agregarGolVisitante();
 		
