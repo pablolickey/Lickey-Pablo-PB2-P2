@@ -50,12 +50,12 @@ public class Partido {
 		this.idDelPartido = idDelPartido;
 	}
 
-	public void agregarGolLocal() {
-		this.golLocal++;
+	public void agregarGolLocal(boolean gol) {
+		if(gol)this.golLocal++;
 	}
 
-	public void agregarGolVisitante() {
-		this.golVisitante++;
+	public void agregarGolVisitante(boolean gol) {
+		if(gol)this.golVisitante++;
 	}
 
 	public String resultado() {
@@ -64,6 +64,24 @@ public class Partido {
 		else{
 			return "Empate";
 		}
+	}
+	
+	public Integrante buscarJugadorLocal(Integrante miembro) {
+		for( Integrante integrante : local ) {
+			if(integrante.equals(miembro) && integrante instanceof Juega) {
+				return integrante;
+			}
+		}
+		return null;
+	}
+	
+	public Integrante buscarJugadorVisitante(Integrante miembro) {
+		for( Integrante integrante : visitante ) {
+			if(integrante.equals(miembro) && integrante instanceof Juega) {
+				return integrante;
+			}
+		}
+		return null;
 	}
 
 
